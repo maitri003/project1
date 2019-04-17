@@ -175,4 +175,42 @@ int main()
 	}
 	
 	return 0;
+
 }}
+}}
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void one(){
+    
+    float a = 0.0; //here we declare the variables and use float because we
+    float b = 0.0;  //are dealing with square roots
+    float c = 0.0;
+    float x1 = 0.0;
+    float x2 = 0.0;
+    float x3 = 0.0;
+    float x4 = 0.0;
+    
+	//this section gets user input and displays message
+    cout << "Enter the coefficients a , b , c for equation in the form ax^ + bx + c = 0:\n";
+    cout << "Enter value for a:\n";
+    cin >>  a;
+    cout << "Enter value for b:\n";
+    cin >>  b;
+    cout << "Enter value for c:\n";
+    cin >>  c;
+    
+	//are all the coefficients 0? if so both roots are 0
+	if(a == 0 && b == 0 && c == 0){
+		x1 = 0;
+		x2 = 0;
+        cout << "The roots are:" "\n"
+        << "x1 = " << x1 << " , " << "x2 = " << x2 << "\n";
+    }
+    
+    //is c the only non-zero number? if so tell the user
+    if(a == 0 && b == 0 && c != 0){
+        c = c;
+        cout << "There are no roots" "\n" << "c = " << c << "\n";
+    }}
