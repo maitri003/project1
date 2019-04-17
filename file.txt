@@ -213,4 +213,134 @@ void one(){
     if(a == 0 && b == 0 && c != 0){
         c = c;
         cout << "There are no roots" "\n" << "c = " << c << "\n";
-    }}
+    
+    #include<iostream>
+#include <list>
+#include <limits.h>
+using namespace std;
+ 
+// Class for an undirected graph
+class Graph
+{
+        int V; // No. of vertices
+        list<int> *adj; // Pointer to an array containing adjacency lists
+        bool isCyclicUtil(int v, bool visited[], int parent);
+    public:
+        Graph(int V); // Constructor
+        void addEdge(int v, int w); // to add an edge to graph
+        bool isCyclic(); // returns true if there is a cycle
+};
+ 
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int> [V];
+}
+ 
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); // Add w to v’s list.
+    adj[w].push_back(v); // Add v to w’s list.i
+    #include<iostream>
+#include<conio.h>
+using namespace std;
+struct node_info
+{
+    int no;
+    int lv_time, st_time;
+}*q = NULL;
+struct node
+{
+    node_info *pt;
+    node *next;
+}*top = NULL, *p = NULL, *np = NULL;
+struct node1
+{
+    node1 *link;
+    node_info *pt1;
+}*head = NULL, *m = NULL, *n = NULL, *np1 = NULL;
+int c = 0;
+bool flag = false;
+void push(node_info *ptr)
+{
+    np = new node;
+    np->pt = ptr;
+    np->next = NULL;
+    if (top == NULL)
+    {
+        top = np;
+    }
+    else
+    {
+        np->next = top;
+        top = np;
+    }
+}
+node_info *pop()
+{
+    if (top == NULL)
+    {
+        cout<<"underflow\n";
+    }
+    else
+    {
+        p = top;
+        top = top->next;
+        return(p->pt);
+        delete(p);
+    }
+}
+void store(node_info *ptr1)
+{
+    np1 = new node1;
+    np1->pt1 = ptr1;
+    np1->link = NULL;
+    if (c == 0)
+    {
+        head = np1;
+        m = head;
+        m->link = NULL;
+        c++;
+    }
+    else
+    {
+        m = head;
+        np1->link = m;
+        head = np1;
+    }
+}
+void remove(int x)
+{
+    m = head;
+    if ((m->pt1)->no == x)
+    {
+        head = head->link;
+        delete(m);
+    }
+    else
+    {
+        while ((m->pt1)->no != x && m->link != NULL)
+        {
+            n = m;
+            m = m->link;
+        }
+        if ((m->pt1)->no == x)
+        {
+            n->link = m->link;
+            delete(m);
+        }
+        else if (m->link == NULL)
+        {
+            flag = true;
+            cout<<"Cycles do not exist in graph\n";
+        }
+    }
+}            
+void topo(int *v, int am[][5], int i)
+{
+    q = new node_info;
+    q->no = i;
+    q->st_time = c;
+    push(q);
+    v[i] = 1;
+    for (int j = 0; j < 5; j++)}}
